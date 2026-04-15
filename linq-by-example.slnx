@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="LinqByExample.Tests/LinqByExample.Tests.csproj" />
-  <Project Path="LinqByExample/LinqByExample.csproj" />
-</Solution>
