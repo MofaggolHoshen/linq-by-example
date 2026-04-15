@@ -1,86 +1,194 @@
-# linq-by-example
+# LINQ by Example — Documentation
 
-A practical, well-commented .NET 8 reference project that exercises every major LINQ operator with explanations of best practices.
+A quick-reference guide for every LINQ operator, each with examples, explanations, and best practices.
 
-## Goal
+---
 
-Work through **all** standard LINQ operators grouped by category, with:
+## Table of Contents
 
-- concise, runnable code examples
-- inline best-practice guidance as XML-doc / summary comments
-- an xUnit test suite that validates every example
+- [Aggregation](#aggregation)
+  - `Count` · `LongCount` · `Sum` · `Min` · `Max` · `MinBy` · `MaxBy` · `Average` · `Aggregate`
+- [Conversion](#conversion)
+  - `ToArray` · `ToList` · `ToDictionary` · `ToHashSet` · `Cast` · `OfType` · `AsEnumerable`
+- [Element Operations](#element-operations)
+  - `First` · `FirstOrDefault` · `Last` · `LastOrDefault` · `Single` · `SingleOrDefault` · `ElementAt` · `ElementAtOrDefault`
+- [Filtering](#filtering)
+  - `Where` · `OfType`
+- [Generation](#generation)
+  - `Range` · `Repeat` · `Empty`
+- [Grouping](#grouping)
+  - `GroupBy` · `ToLookup`
+- [Joining](#joining)
+  - `Join` · `GroupJoin` · `Zip`
+- [Ordering](#ordering)
+  - `OrderBy` · `OrderByDescending` · `ThenBy` · `ThenByDescending` · `Reverse`
+- [Partitioning](#partitioning)
+  - `Take` · `TakeWhile` · `Skip` · `SkipWhile` · `Chunk`
+- [Projection](#projection)
+  - `Select` · `SelectMany`
+- [Quantifiers](#quantifiers)
+  - `Any` · `All` · `Contains`
+- [Set Operations](#set-operations)
+  - `Distinct` · `DistinctBy` · `Union` · `Intersect` · `Except`
 
-## Project Structure
+---
 
-```
-linq-by-example.sln
-├── LinqByExample/                    # Console app – runnable demo
-│   ├── Program.cs                    # Wires every category together
-│   └── Examples/
-│       ├── FilteringExamples.cs      # Where, OfType
-│       ├── ProjectionExamples.cs     # Select, SelectMany
-│       ├── OrderingExamples.cs       # OrderBy, ThenBy, Reverse, …
-│       ├── GroupingExamples.cs       # GroupBy, ToLookup
-│       ├── JoiningExamples.cs        # Join, GroupJoin, Zip
-│       ├── AggregationExamples.cs    # Count, Sum, Min, Max, Average, Aggregate
-│       ├── SetOperationExamples.cs   # Distinct, Union, Intersect, Except
-│       ├── QuantifierExamples.cs     # Any, All, Contains
-│       ├── PartitioningExamples.cs   # Take, Skip, TakeWhile, SkipWhile, Chunk
-│       ├── ElementOperationExamples.cs # First, Last, Single, ElementAt, …
-│       ├── GenerationExamples.cs     # Range, Repeat, Empty
-│       └── ConversionExamples.cs     # ToArray, ToList, ToDictionary, Cast, …
-└── LinqByExample.Tests/              # xUnit test project (71 tests)
-    └── Tests/
-        ├── FilteringTests.cs
-        ├── ProjectionTests.cs
-        ├── OrderingTests.cs
-        ├── GroupingTests.cs
-        ├── JoiningTests.cs
-        ├── AggregationTests.cs
-        ├── SetOperationTests.cs
-        ├── QuantifierTests.cs
-        ├── PartitioningTests.cs
-        ├── ElementOperationTests.cs
-        ├── GenerationTests.cs
-        └── ConversionTests.cs
-```
+## Aggregation
 
-## LINQ Categories Covered
+[📄 Doc](aggregation.md) · [💻 Source](../source/AggregationExamples.cs)
 
-| # | Category | Operators |
-|---|---|---|
-| 1 | **Filtering** | `Where`, `OfType` |
-| 2 | **Projection** | `Select`, `SelectMany` |
-| 3 | **Ordering** | `OrderBy`, `OrderByDescending`, `ThenBy`, `ThenByDescending`, `Reverse` |
-| 4 | **Grouping** | `GroupBy`, `ToLookup` |
-| 5 | **Joining** | `Join`, `GroupJoin`, `Zip` |
-| 6 | **Aggregation** | `Count`, `Sum`, `Min`, `Max`, `MinBy`, `MaxBy`, `Average`, `Aggregate` |
-| 7 | **Set Operations** | `Distinct`, `DistinctBy`, `Union`, `Intersect`, `Except` |
-| 8 | **Quantifiers** | `Any`, `All`, `Contains` |
-| 9 | **Partitioning** | `Take`, `TakeWhile`, `Skip`, `SkipWhile`, `Chunk` |
-| 10 | **Element Operations** | `First`, `FirstOrDefault`, `Last`, `LastOrDefault`, `Single`, `SingleOrDefault`, `ElementAt`, `ElementAtOrDefault` |
-| 11 | **Generation** | `Enumerable.Range`, `Enumerable.Repeat`, `Enumerable.Empty` |
-| 12 | **Conversion** | `ToArray`, `ToList`, `ToDictionary`, `ToHashSet`, `Cast`, `AsEnumerable` |
+| Operator | Description |
+|----------|-------------|
+| `Count` | Number of elements, optionally filtered by a predicate |
+| `LongCount` | Like `Count` but returns `long` — use for very large sequences |
+| `Sum` | Sum of all elements or projected values |
+| `Min` | Smallest value in the sequence |
+| `Max` | Largest value in the sequence |
+| `MinBy` | Element whose projected value is smallest (.NET 6+) |
+| `MaxBy` | Element whose projected value is largest (.NET 6+) |
+| `Average` | Arithmetic mean |
+| `Aggregate` | General-purpose fold — accumulates a result over every element |
 
-## Quick Start
+---
 
-```bash
-# Run the interactive demo
-dotnet run --project LinqByExample
+## Conversion
 
-# Run all tests
-dotnet test
+[📄 Doc](conversion.md) · [💻 Source](../source/ConversionExamples.cs)
 
-# Build in release mode
-dotnet build --configuration Release
-```
+| Operator | Description |
+|----------|-------------|
+| `ToArray` | Materialises the sequence as a `T[]` |
+| `ToList` | Materialises the sequence as a `List<T>` |
+| `ToDictionary` | Creates a `Dictionary<TKey, TValue>` keyed by a selector |
+| `ToHashSet` | Creates a `HashSet<T>`, removing duplicates |
+| `Cast<T>` | Casts every element to `T`; throws on a bad cast |
+| `OfType<T>` | Filters to elements that are of type `T`; skips others |
+| `AsEnumerable` | Returns the sequence typed as `IEnumerable<T>` |
 
-## Key Best Practices
+---
 
-- **Deferred vs. eager execution** – LINQ operators are lazy by default; call `ToList()` / `ToArray()` to materialise results and avoid multiple enumerations.
-- **Short-circuit operators** – `Any()` and `First()` stop as soon as they find a match; prefer them over `Count() > 0` or `Where().First()`.
-- **`*OrDefault` variants** – use `FirstOrDefault`, `SingleOrDefault`, etc. when a sequence may be empty to avoid `InvalidOperationException`.
-- **`ToLookup` vs `GroupBy`** – `ToLookup` is eagerly evaluated and cached; use it when you need to query the same groups multiple times.
-- **Set operators are O(n+m)** – they use hash-based lookups internally; they are far more efficient than nested-loop membership tests.
-- **Culture-safe string sorting** – pass `StringComparer.OrdinalIgnoreCase` to `OrderBy` / `ThenBy` for deterministic, culture-independent ordering.
-- **`OfType<T>` over `Cast<T>`** – use `OfType` when a collection may contain mixed types; `Cast` throws on a bad element.
+## Element Operations
+
+[📄 Doc](element-operations.md) · [💻 Source](../source/ElementOperationExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `First` | First element; throws if empty |
+| `FirstOrDefault` | First element or `default` if empty |
+| `Last` | Last element; throws if empty |
+| `LastOrDefault` | Last element or `default` if empty |
+| `Single` | The only element; throws if 0 or more than 1 |
+| `SingleOrDefault` | The only element or `default`; throws if more than 1 |
+| `ElementAt` | Element at a zero-based index; throws if out of range |
+| `ElementAtOrDefault` | Element at index or `default` if out of range |
+
+---
+
+## Filtering
+
+[📄 Doc](filtering.md) · [💻 Source](../source/FilteringExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Where` | Returns elements that satisfy a predicate |
+| `OfType<T>` | Filters to elements of a specific type |
+
+---
+
+## Generation
+
+[📄 Doc](generation.md) · [💻 Source](../source/GenerationExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Range` | Generates a contiguous sequence of integers |
+| `Repeat` | Generates a sequence repeating an element N times |
+| `Empty<T>` | Returns a cached, allocation-free empty sequence |
+
+---
+
+## Grouping
+
+[📄 Doc](grouping.md) · [💻 Source](../source/GroupingExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `GroupBy` | Groups elements by a key selector (deferred) |
+| `ToLookup` | Groups elements by a key selector (eager, cached) |
+
+---
+
+## Joining
+
+[📄 Doc](joining.md) · [💻 Source](../source/JoiningExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Join` | Inner join on a matching key |
+| `GroupJoin` | Left outer join — each left element paired with its matching right elements |
+| `Zip` | Combines two sequences element-by-element by position |
+
+---
+
+## Ordering
+
+[📄 Doc](ordering.md) · [💻 Source](../source/OrderingExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `OrderBy` | Sorts ascending by a key |
+| `OrderByDescending` | Sorts descending by a key |
+| `ThenBy` | Secondary ascending sort |
+| `ThenByDescending` | Secondary descending sort |
+| `Reverse` | Reverses the current sequence order |
+
+---
+
+## Partitioning
+
+[📄 Doc](partitioning.md) · [💻 Source](../source/PartitioningExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Take` | Returns the first N elements |
+| `TakeWhile` | Returns elements while a predicate holds |
+| `Skip` | Bypasses the first N elements |
+| `SkipWhile` | Bypasses elements while a predicate holds |
+| `Chunk` | Splits into fixed-size arrays (.NET 6+) |
+
+---
+
+## Projection
+
+[📄 Doc](projection.md) · [💻 Source](../source/ProjectionExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Select` | Transforms each element into a new form |
+| `SelectMany` | Flattens nested collections into a single sequence |
+
+---
+
+## Quantifiers
+
+[📄 Doc](quantifiers.md) · [💻 Source](../source/QuantifierExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Any` | `true` if at least one element satisfies the condition |
+| `All` | `true` only if every element satisfies the condition |
+| `Contains` | `true` if the sequence contains a specific element |
+
+---
+
+## Set Operations
+
+[📄 Doc](set-operations.md) · [💻 Source](../source/SetOperationExamples.cs)
+
+| Operator | Description |
+|----------|-------------|
+| `Distinct` | Removes duplicate elements |
+| `DistinctBy` | Keeps the first element per distinct key (.NET 6+) |
+| `Union` | All elements from both sequences, duplicates removed |
+| `Intersect` | Elements present in both sequences |
+| `Except` | Elements in the first sequence not in the second |
