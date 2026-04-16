@@ -54,11 +54,10 @@ public static class AggregationExamples
             acc.Length == 0 ? word : $"{acc}, {word}");
 
     /// <summary>
-    /// Aggregate with result selector – apply a final transformation to the
-    /// accumulated value.
+    /// Aggregate with a seed value.
     /// </summary>
     public static int RunningProduct(IEnumerable<int> numbers) =>
-        numbers.Aggregate(1, (product, n) => product * n, result => result);
+        numbers.Aggregate(1, (product, n) => product * n);
 }
 
 public class Program
