@@ -35,7 +35,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Aggregation
 
-[📄 Doc](aggregation.md) · [💻 Source](../source/AggregationExamples.cs)
+[📄 Doc](docs/aggregation.md) · [💻 Source](source/AggregationExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -53,7 +53,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Conversion
 
-[📄 Doc](conversion.md) · [💻 Source](../source/ConversionExamples.cs)
+[📄 Doc](docs/conversion.md) · [💻 Source](source/ConversionExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -69,7 +69,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Element Operations
 
-[📄 Doc](element-operations.md) · [💻 Source](../source/ElementOperationExamples.cs)
+[📄 Doc](docs/element-operations.md) · [💻 Source](source/ElementOperationExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -86,7 +86,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Filtering
 
-[📄 Doc](filtering.md) · [💻 Source](../source/FilteringExamples.cs)
+[📄 Doc](docs/filtering.md) · [💻 Source](source/FilteringExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -97,7 +97,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Generation
 
-[📄 Doc](generation.md) · [💻 Source](../source/GenerationExamples.cs)
+[📄 Doc](docs/generation.md) · [💻 Source](source/GenerationExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -109,7 +109,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Grouping
 
-[📄 Doc](grouping.md) · [💻 Source](../source/GroupingExamples.cs)
+[📄 Doc](docs/grouping.md) · [💻 Source](source/GroupingExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -120,7 +120,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Joining
 
-[📄 Doc](joining.md) · [💻 Source](../source/JoiningExamples.cs)
+[📄 Doc](docs/joining.md) · [💻 Source](source/JoiningExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -132,7 +132,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Ordering
 
-[📄 Doc](ordering.md) · [💻 Source](../source/OrderingExamples.cs)
+[📄 Doc](docs/ordering.md) · [💻 Source](source/OrderingExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -146,7 +146,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Partitioning
 
-[📄 Doc](partitioning.md) · [💻 Source](../source/PartitioningExamples.cs)
+[📄 Doc](docs/partitioning.md) · [💻 Source](source/PartitioningExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -160,7 +160,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Projection
 
-[📄 Doc](projection.md) · [💻 Source](../source/ProjectionExamples.cs)
+[📄 Doc](docs/projection.md) · [💻 Source](source/ProjectionExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -171,7 +171,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Quantifiers
 
-[📄 Doc](quantifiers.md) · [💻 Source](../source/QuantifierExamples.cs)
+[📄 Doc](docs/quantifiers.md) · [💻 Source](source/QuantifierExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
@@ -183,7 +183,7 @@ A quick-reference guide for every LINQ operator, each with examples, explanation
 
 ## Set Operations
 
-[📄 Doc](set-operations.md) · [💻 Source](../source/SetOperationExamples.cs)
+[📄 Doc](docs/set-operations.md) · [💻 Source](source/SetOperationExamples.cs)
 
 | Operator | Description |
 |----------|-------------|
