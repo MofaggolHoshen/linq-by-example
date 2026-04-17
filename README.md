@@ -1,4 +1,57 @@
-# LINQ by Example — Documentation
+# LINQ by Example
+
+A practical, self-contained reference for every standard LINQ operator in .NET. Each operator gets working C# examples, a concise explanation, best-practice notes, and — for performance-sensitive operators — a BenchmarkDotNet benchmark.
+
+Whether you are learning LINQ for the first time or need a fast refresher on a specific operator, this repo has you covered.
+
+---
+
+## About
+
+**Language-Integrated Query (LINQ)** is a set of extension methods in `System.Linq` that let you query and transform any `IEnumerable<T>` or `IQueryable<T>` source using a unified, composable API. This repository explores every operator in the standard LINQ library through concrete, runnable examples.
+
+### What's inside
+
+| Folder | Contents |
+|--------|----------|
+| [`source/`](source/) | Annotated C# source files — one file per category, each method documented with XML doc-comments and best-practice notes |
+| [`docs/`](docs/) | Markdown documentation for each operator category with additional context and usage guidance |
+| [`benchmarks/`](benchmarks/) | BenchmarkDotNet scripts that compare LINQ methods against equivalent manual loops, measuring throughput and allocations |
+
+### Operator categories
+
+12 categories covering every standard LINQ operator:
+
+**Aggregation** · **Conversion** · **Element Operations** · **Filtering** · **Generation** · **Grouping** · **Joining** · **Ordering** · **Partitioning** · **Projection** · **Quantifiers** · **Set Operations**
+
+---
+
+## Requirements
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/download) or later (examples use .NET 6+ operators such as `MinBy`, `MaxBy`, `DistinctBy`, and `Chunk`)
+
+---
+
+## Running the examples
+
+Each source file under [`source/`](source/) is a self-contained C# script. Run any example directly with the .NET CLI:
+
+```bash
+dotnet run source/AggregationExamples.cs
+```
+
+## Running the benchmarks
+
+Benchmarks are in [`benchmarks/`](benchmarks/) and use [BenchmarkDotNet](https://benchmarkdotnet.org/). Always run in **Release** mode for accurate results:
+
+```bash
+dotnet run --configuration Release benchmarks/aggregation.cs
+dotnet run --configuration Release benchmarks/any-count.cs
+```
+
+---
+
+## Documentation
 
 A quick-reference guide for every LINQ operator, each with examples, explanations, and best practices.
 
