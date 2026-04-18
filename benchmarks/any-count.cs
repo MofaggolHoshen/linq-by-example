@@ -5,7 +5,7 @@
 // Note: The Count() method from LINQ will have overhead compared to the direct Count property for List<T> and Length property for T[], so the benchmark will show the performance difference between these approaches.
 //
 // Run in Release mode to get accurate results:
-//   dotnet run --configuration Release benchmark/any-count.cs
+//   dotnet run --configuration Release benchmarks/any-count.cs
 // ============================================================
 #:package BenchmarkDotNet@0.14.0
 
