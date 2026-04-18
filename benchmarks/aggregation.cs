@@ -3,7 +3,7 @@
 // ============================================================
 // This benchmark compares the performance of common LINQ aggregation operators
 // against equivalent manual loops for List<int> and int[] collections across
-// different sizes (10, 1,000, and 100,000 elements).
+// different sizes (10, 1,000, and 10,000 elements).
 //
 // Run in Release mode to get accurate results:
 //   dotnet run --configuration Release benchmarks/aggregation.cs
@@ -30,7 +30,7 @@ public class AggregationBenchmark
     private List<int> _list = null!;
     private int[] _array = null!;
 
-    [Params(10, 1_000, 100_000)]
+    [Params(10, 1_000, 10_000)]
     public int Size { get; set; }
 
     [GlobalSetup]
