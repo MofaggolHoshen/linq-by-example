@@ -6,7 +6,7 @@
 // different sizes (10, 1,000, and 100,000 elements).
 //
 // Run in Release mode to get accurate results:
-//   dotnet run --configuration Release benchmark/aggregation.cs
+//   dotnet run --configuration Release benchmarks/aggregation.cs
 // ============================================================
 #:package BenchmarkDotNet@0.14.0
 
