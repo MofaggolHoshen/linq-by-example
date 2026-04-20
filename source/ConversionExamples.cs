@@ -1,3 +1,4 @@
+// dotnet run .\source\ConversionExamples.cs
 /// <summary>
 /// Demonstrates LINQ conversion operators: ToArray, ToList, ToDictionary,
 /// ToHashSet, Cast, AsEnumerable, and AsQueryable.

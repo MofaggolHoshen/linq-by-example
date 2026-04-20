@@ -1,3 +1,4 @@
+// dotnet run .\source\AggregationExamples.cs
 /// <summary>
 /// Demonstrates LINQ aggregation operators: Count, LongCount, Sum, Min, Max,
 /// Average, and Aggregate.
