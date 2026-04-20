@@ -1,4 +1,3 @@
-// dotnet run .\source\ConversionExamples.cs
 /// <summary>
 /// Demonstrates LINQ conversion operators: ToArray, ToList, ToDictionary,
 /// ToHashSet, Cast, AsEnumerable, and AsQueryable.
@@ -15,6 +14,8 @@
 /// - AsEnumerable hides IQueryable-specific methods, forcing the rest of a
 ///   LINQ query to run in-memory (useful when switching from LINQ to EF Core
 ///   to in-memory evaluation mid-query).
+/// How to run:
+/// - dotnet run .\source\ConversionExamples.cs
 /// </summary>
 public static class ConversionExamples
 {
