@@ -1,4 +1,3 @@
-// dotnet run .\source\AggregationExamples.cs
 /// <summary>
 /// Demonstrates LINQ aggregation operators: Count, LongCount, Sum, Min, Max,
 /// Average, and Aggregate.
@@ -11,6 +10,8 @@
 /// - Aggregate is the general fold operation; always provide a seed when the
 ///   sequence might be empty to avoid InvalidOperationException.
 /// - Use LongCount instead of Count when the sequence may exceed int.MaxValue.
+/// How to run: 
+/// - dotnet run .\source\AggregationExamples.cs
 /// </summary>
 public static class AggregationExamples
 {
