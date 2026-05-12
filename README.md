@@ -8,7 +8,7 @@ Whether you are learning LINQ for the first time or need a fast refresher on a s
 
 ## About
 
-**Language-Integrated Query (LINQ)** is a set of extension methods in `System.Linq` that let you query and transform any `IEnumerable<T>` or `IQueryable<T>` source using a unified, composable API. This repository explores every operator in the standard LINQ library through concrete, runnable examples.
+**Language-Integrated Query (LINQ)** is a set of extension methods in `System.Linq` that let you query and transform any `IEnumerable<T>` or `IQueryable<T>` source using a unified, composable API. This repository explores every operator in the standard LINQ library through concrete, runnable examples. 
 
 ### What's inside
 
